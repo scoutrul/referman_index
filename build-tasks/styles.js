@@ -1,3 +1,4 @@
+
 var gulp      = require('gulp'),
   gConfig     = require('../gulp-config'),
   utils       = require('./utils'),
@@ -6,6 +7,8 @@ var gulp      = require('gulp'),
   src         = gConfig.paths.sources,
   dest        = gConfig.paths.destinations,
   plugins     = require('gulp-load-plugins')(opts.load),
+  koutoSwiss = require('kouto-swiss'),
+  typographic = require('typographic'),
   /* styles:lint */
   lint = function() {
     return gulp.src(src.styles)
@@ -17,7 +20,9 @@ var gulp      = require('gulp'),
     return gulp.src(src.styles)
       .pipe(plugins.plumber())
       .pipe(plugins.concat(gConfig.pkg.name + '.stylus'))
-      .pipe(plugins.stylus())
+      .pipe(plugins.stylus({
+            "use": [koutoSwiss(), typographic()]
+        }))
       .pipe(plugins.prefix(opts.prefix))
       .pipe(env.stat ? plugins.size(opts.gSize): plugins.gUtil.noop())
       .pipe(env.deploy ? plugins.gUtil.noop(): gulp.dest(env.dist ? dest.dist: dest.css))
@@ -28,7 +33,7 @@ var gulp      = require('gulp'),
   },
   /* styles:watch */
   watch = function() {
-    gulp.watch(src.styles, ['styles:compile']);
+    gulp.watch(src.styles, ['compile:styles']);
   };
 
 module.exports = {

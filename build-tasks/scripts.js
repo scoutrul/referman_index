@@ -31,7 +31,7 @@ var gulp      = require('gulp'),
   },
   /* scripts:watch */
   watch = function() {
-    gulp.watch(src.scripts, ['scripts:compile']);
+    gulp.watch(src.scripts, ['compile:scripts']);
   };
 
 module.exports = {

@@ -1,5 +1,92 @@
 extends layout-blocks/layout
 block content
-  .content
-    h2 A simple gulp boilerplate that gets you up and running with popular tasks.
-    p Fork the repo and create your own.
+	.content
+		.main-screen
+			.container
+				h1 Referman — <br>cервис для<br>рекомендаций<br>и поиска<br>программистов
+				.slogan Нанимайте программистов<br>или рекомендуйте их работодателям<br>за вознаграждение!
+				.buttons
+					button.red Найти программиста
+					button.red Рекомендовать программиста
+
+		.reviews
+			.container
+				header
+					h2 Истории успеха пользователей
+					.slogan Более тысячи успешно подобранных кандидатов
+				ul.list
+					li
+						.avatar
+							img(src="/images/reviews_01.png", alt="")
+						.body Добавила всех кандидатов, которые не подошли на мои вакансии. Теперь они ходят по собеседованиям. Я довольна работой сервиса.
+						.name Татьяна Гайдай
+						.prof Sr Recruiter
+						.logo 
+							img(src="/images/reviews_logo_01.png", alt="")
+					li
+						.avatar
+							img(src="/images/reviews_02.png", alt="")
+						.body Активно пользуюсь сервисом. Есть кандидаты, которых больше нигде не находил. Рекомендую Referman как лучший сервис по подбору.
+						.name Николай Белоус
+						.prof HR
+						.logo 
+							img(src="/images/reviews_logo_02.png", alt="")
+
+		.features
+			.container
+				ul.list
+					li
+						.title 1000+ работодателей видят ваши рекомендации
+						.icon
+							img(src="/images/features_icon_01.png", alt="")
+						.sub-title Добавьте кандидата в Referman, без имени и фамилии, и он будет виден в поиске всему миру
+					li
+						.title Это как Skype чаты, только глобально и автоматизировано
+						.icon
+							img(src="/images/features_icon_02.png", alt="")
+						.sub-title Referman - это сервис, объединяющий рекрутеров и работодаталей, с чатами, статусами и напоминаниями
+					li
+						.title На 30% увеличивается эффективность работы
+						.icon
+							img(src="/images/features_icon_03.png", alt="")
+						.sub-title Трудоустройте кандидатов, которые не подошли под ваши вакансии и заработайте хорошие бонусы
+					li
+						.title Кандидаты, которые не ходят на job сайты
+						.icon
+							img(src="/images/features_icon_04.png", alt="")
+						.sub-title Кандидаты не ходят на job сайты. Их хантят рекрутеры и рекомендуют на Referman
+					li
+						.title Прибыль от работы нанятого программиста
+						.icon
+							img(src="/images/features_icon_05.png", alt="")
+						.sub-title Нанимайте программистов на Referman и они сделают ваш проект успешным
+					li
+						.title Быстрое закрытие вакансий
+						.icon
+							img(src="/images/features_icon_06.png", alt="")
+						.sub-title Только мотивированные программисты, готовые рассмотреть ваш offer
+
+		.success
+			.container
+				header Сделайте три простых шага навстречу успеху!
+
+				.steps
+					.step-container
+						.step-index
+							span 1
+						.step-text
+							span Оставьте заявку
+					.step-container
+						.step-index
+							span 2
+						.step-text
+							span Обсудите детали
+					.step-container
+						.step-index
+							span 3
+						.step-text
+							span Заключите сделку
+
+				.buttons
+					button.red Найти программиста
+					button.red Рекомендовать программиста

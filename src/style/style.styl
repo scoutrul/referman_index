@@ -1,39 +1,211 @@
-colorPalette = {
-  red   : #E74C3C
-  blue  : blue
-  green : #2ECC71
-  purple: #8E44AD
-  lilac : #AC92CE
-  white : #FFFFFF
-}
+@import 'kouto-swiss'
+@import 'typographic'
 
-for key, value in colorPalette
-  .bg--{key}
-    background-color value
-  .tx--{key}
-    color value
+meyer-reset()
+box-sizing-reset()
+sanitize()
 
-remify(size)
-  val = size / (size * 0 + 1)
-  ((val) / 16)rem
+$mainfont = 'Roboto', 'sans-serif'
+$line-height-ratio   = 1.75
+$heading-ratio       = $golden
+$body-font           = $mainfont
+$body-font-weight    = 300
+$body-color          = #666
+$heading-font        = $mainfont
+$heading-font-weight = 500
+$heading-color       = #111
+$min-font = 14px
+$max-font = 18px
+$min-width           = 600px
+$max-width           = 1000px
+$vertical-rhythm     = true
 
-font-size(size)
-  font-size size
-  val = size / (size * 0 + 1)
-  font-size ((val) / 16)rem
+typographic()
 
+$bodybg = #f4f4f4
+$white = #FFF
+$footerBg = #061d25
+$textGrey = #acacac
+
+$stepsColor = #d3d3d3
 body
-  padding 0 0 0 0
-  margin 0 0 0 0
+	background $bodybg
+	font-weight 300
+#app
+	display flex
+	flex-direction column
+	height 100%
+.container
+	margin auto
+	max-width 1200px
+	width 100%
+	padding 10px
+.header
+	.container
+		display flex
+		justify-content space-between
+		padding: 1rem 10px;
+		.logo>img
+			height 54px
+		.login
+			display flex
+			align-items center
+			text-transform uppercase
+			.registration
+				margin: 0 4rem;
+.content
+	flex 1 0 0
+	.main-screen
+		height 50rem
+		display flex
+		flex-direction column
+		background: no-repeat 50% fixed;
+		background-image: url(/images/index_snap.jpg);
+		.container
+			h1
+				font-size 320%
+				font-weight 100
+			.slogan
+				color: $textGrey
+				font-size: 140%;
+				font-weight: 300;
+				margin: 2em 0;
+			.buttons
+				display flex
+				button
+					background: #ff4364;
+					padding: 15px 35px
+					color: #fff;
+					border: none;
+					font-size: 100%
+					font-weight 100
+					margin-right 1em
+	.reviews
+		background-color $white
+		outline: 10px solid #f4f4f4;
+		outline-offset: -10px;
+		header
+			text-align: center;
+			margin: 1em auto;
+			h2
+				font-weight: 300;
+				font-size: 170%;
+				margin 1em
+			.slogan
+				color $textGrey
+				font-size: 120%;
+				font-weight: 100;
+		.avatar
+			img
+				width 96px
+				height 96px
+				border-radius 50%
+		.list
+			font-size: 120%;
+			font-weight: 100;
+			display: flex;
+			flex-wrap: wrap;
+			margin: 2em 0;
+			padding: 0;
+			li 
+				margin: auto;
+				max-width: 450px;
+				min-width: 300px;
+				flex: 1 0 40%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 0 1em;
+				text-align: center;
+				.body
+					margin 1em 0
+					font-weight 300
+					font-size 105%
+					line-height 140%
+				.name
+					margin 5px
+					color #333
+					font-weight 400
+				.prof
+					color $textGrey
+					margin 5px
+					
+				.logo
+					margin 10px 0 
 
-header
-  margin 0
-  padding 20px
-  h1
-    font-size(48px)
-
-a
-  text-decoration none
-
-.tx--center
-  text-align center
+	.features
+		.list
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			
+			li
+				max-width 360px
+				text-align: center;
+				padding: 1em;
+				flex: 1 0 35%;
+				.icon
+					margin 1em
+				.title
+					font-weight 400
+				.sub-title
+					margin 1em
+					font-weight 100
+	.success
+		background-color $white
+		header
+			font-size: 200%;
+			font-weight: 100;
+			text-align: center;
+			margin: 2em;
+				
+		.steps
+			display flex
+			justify-content space-around
+			position relative
+			margin 3em auto
+			&:before
+				content ""
+				position absolute
+				top 30px
+				border-bottom 2px dotted $stepsColor
+				width 70%
+				left 15%
+				z-index 0
+		.step-container
+			display flex
+			flex-direction column
+			position relative
+			.step-index
+				display flex
+				justify-content center
+				border-radius 50%
+				height 60px
+				width 60px
+				background $stepsColor
+				align-self center
+				line-height 60px
+				span
+					color $white
+					font-size 25px
+			.step-text
+				margin 1em
+		.buttons
+			display flex
+			justify-content: center;
+			button
+				background: #ff4364;
+				padding: 15px 35px
+				color: #fff;
+				border: none;
+				font-size: 100%
+				font-weight 100
+				margin .5em
+.footer
+	background $footerBg
+	font-size: 80%;
+	color: #9c9c9c;
+	padding: 10px 0;
+	.container
+		display flex
+		justify-content space-between
