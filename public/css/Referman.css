@@ -546,7 +546,7 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   background: no-repeat 50% fixed;
-  background-image: url("./images/index_snap.jpg");
+  background-image: url("../images/index_snap.jpg");
 }
 .content .main-screen .container h1 {
   font-size: 320%;
